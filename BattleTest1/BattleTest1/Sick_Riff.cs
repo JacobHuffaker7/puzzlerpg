@@ -8,10 +8,18 @@ namespace BattleTest1
 {
     class Sick_Riff : Ability
     {
-        public Sick_Riff(string title, string desc, int AP, string type, int BP, bool top, bool front, bool bottom) 
-            : base(title, desc, AP, type, BP, top, front, bottom)
+        public Sick_Riff() 
         {
-            
+            Title = "Sick Riff";
+            Description = "A sick bass riff that fires up an ally to boost their Attack.";
+            AP_Cost = 2;
+            TargetType = "Hero";
+            //Targets will be set later by a setter that's called externally;
+            Targets = new List<Space>();
+            BasePower = 0;
+            top = false;
+            front = false;
+            bottom = false;
         }
 
         public override void execute(Creature attacker)

@@ -12,23 +12,15 @@ namespace BattleTest1
         public string Description;
         public int AP_Cost;
         public string TargetType;
-        public Space[] Targets;
+        public List<Space> Targets;
         public int BasePower;
         public bool top;
         public bool front;
         public bool bottom;
 
-        public Ability(string title, string desc, int AP, string type, int BP, bool top, bool front, bool bottom)
+        public Ability()
         {
-            Title = title;
-            Description = desc;
-            AP_Cost = AP;
-            TargetType = type;
-            //Targets will be set later by individual constructors or by a setter that's called externally;
-            BasePower = BP;
-            this.top = top;
-            this.front = front;
-            this.bottom = bottom;
+            
         }
 
         public virtual void execute(Creature attacker)
@@ -45,6 +37,12 @@ namespace BattleTest1
                     }
                 }
             }
+        }
+
+        //default setTargets only adds the space selected.
+        public virtual void setTargets(Space[] grid, int index)
+        {
+            Targets.Add(grid[index]);
         }
 
         private int calculateDamage(Creature attacker, Creature defender)

@@ -44,11 +44,15 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ability.cs" />
+    <Compile Include="Ash.cs" />
     <Compile Include="Creature.cs" />
+    <Compile Include="Overhead_Slash.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SickRiff.cs" />
+    <Compile Include="Reading_Rainbow.cs" />
+    <Compile Include="Sick_Riff.cs" />
     <Compile Include="Space.cs" />
+    <Compile Include="Wide_Swipe.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

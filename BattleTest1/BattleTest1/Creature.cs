@@ -25,24 +25,24 @@ namespace BattleTest1
         public int Actions;
         public List<Ability> Abilities;
 
-        public Creature(string name, string align, string desc, int HP, int AP, int Attack, int Defense, double top, double front, double bottom)
+        public Creature(int level)
         {
-            Name = name;
-            Alignment = align;
-            Description = desc;
-            MaxHP = HP;
-            CurrHP = HP;
-            MaxAP = AP;
-            CurrAP = AP;
-            BaseAttack = Attack;
-            CurrAttack = Attack;
-            BaseDefense = Defense;
-            CurrDefense = Defense;
-            TopMod = top;
-            FrontMod = front;
-            BottomMod = bottom;
-            Actions = 1;
-            Abilities = new List<Ability>();
+            //Name = name;
+            //Alignment = align;
+            //Description = desc;
+            //MaxHP = HP;
+            //CurrHP = HP;
+            //MaxAP = AP;
+            //CurrAP = AP;
+            //BaseAttack = Attack;
+            //CurrAttack = Attack;
+            //BaseDefense = Defense;
+            //CurrDefense = Defense;
+            //TopMod = top;
+            //FrontMod = front;
+            //BottomMod = bottom;
+            //Actions = 1;
+            //Abilities = new List<Ability>();
         }
     }
 }
