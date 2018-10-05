@@ -46,12 +46,17 @@
     <Compile Include="Ability.cs" />
     <Compile Include="Ash.cs" />
     <Compile Include="Creature.cs" />
+    <Compile Include="Holmes.cs" />
+    <Compile Include="Nick.cs" />
     <Compile Include="Overhead_Slash.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rachel.cs" />
     <Compile Include="Reading_Rainbow.cs" />
     <Compile Include="Sick_Riff.cs" />
     <Compile Include="Space.cs" />
+    <Compile Include="Sterling.cs" />
+    <Compile Include="Steve.cs" />
     <Compile Include="Wide_Swipe.cs" />
   </ItemGroup>
   <ItemGroup>
