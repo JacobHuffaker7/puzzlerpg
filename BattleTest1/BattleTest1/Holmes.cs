@@ -14,20 +14,21 @@ namespace BattleTest1
             {//Need description and stats
                 Name = "Holmes";
                 Alignment = "Hero";
-                Description = "";
-                MaxHP = 0;
-                CurrHP = 0;
-                MaxAP = 0;
-                CurrAP = 0;
-                BaseAttack = 0;
-                CurrAttack = 0;
-                BaseDefense = 0;
-                CurrDefense = 0;
-                TopMod = 0;
-                FrontMod = 0;
+                Description = "A brilliant inventor with a chip on his shoulder.";
+                MaxHP = 40;
+                CurrHP = 40;
+                MaxAP = 10;
+                CurrAP = 10;
+                BaseAttack = 8;
+                CurrAttack = 8;
+                BaseDefense = 10;
+                CurrDefense = 10;
+                TopMod = 1;
+                FrontMod = 1;
                 BottomMod = 0;
-                Actions = 0;
+                Actions = 1;
                 Abilities = new List<Ability>();
+                //Abilities.Add(new Wrench_Throw());
             }
         }
     }

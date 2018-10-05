@@ -14,20 +14,21 @@ namespace BattleTest1
             {//Need description and stats
                 Name = "Sterling";
                 Alignment = "Hero";
-                Description = "";
-                MaxHP = 0;
-                CurrHP = 0;
-                MaxAP = 0;
-                CurrAP = 0;
-                BaseAttack = 0;
-                CurrAttack = 0;
-                BaseDefense = 0;
-                CurrDefense = 0;
-                TopMod = 0;
+                Description = "A laid-back businessman and snack-distributor-in-chief.";
+                MaxHP = 45;
+                CurrHP = 45;
+                MaxAP = 10;
+                CurrAP = 10;
+                BaseAttack = 6;
+                CurrAttack = 6;
+                BaseDefense = 13;
+                CurrDefense = 13;
+                TopMod = 1;
                 FrontMod = 0;
-                BottomMod = 0;
-                Actions = 0;
+                BottomMod = 1;
+                Actions = 1;
                 Abilities = new List<Ability>();
+                //Abilities.Add(new Pinka_Cola());
             }
         }
     }

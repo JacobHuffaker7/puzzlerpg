@@ -14,19 +14,19 @@ namespace BattleTest1
             {//Need description and stats
                 Name = "Rachel";
                 Alignment = "Hero";
-                Description = "";
-                MaxHP = 0;
-                CurrHP = 0;
-                MaxAP = 0;
-                CurrAP = 0;
-                BaseAttack = 0;
-                CurrAttack = 0;
-                BaseDefense = 0;
-                CurrDefense = 0;
-                TopMod = 0;
-                FrontMod = 0;
-                BottomMod = 0;
-                Actions = 0;
+                Description = "A hardworking editor who fights with the power of literature.";
+                MaxHP = 35;
+                CurrHP = 35;
+                MaxAP = 10;
+                CurrAP = 10;
+                BaseAttack = 9;
+                CurrAttack = 9;
+                BaseDefense = 9;
+                CurrDefense = 9;
+                TopMod = 1;
+                FrontMod = 1;
+                BottomMod = 1;
+                Actions = 1;
                 Abilities = new List<Ability>();
                 Abilities.Add(new Reading_Rainbow());
             }
