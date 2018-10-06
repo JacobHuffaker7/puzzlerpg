@@ -33,6 +33,21 @@ namespace BattleTest1
             {
                 Console.Write(HeroSide[i].creature.Name + " (" + HeroSide[i].creature.CurrHP + "/" + HeroSide[i].creature.MaxHP + ")|");
             }
+            Console.WriteLine();
+        }
+
+        public int teamActionsLeft(Space[] side)
+        {
+            int a = 0;
+            foreach(Space space in side)
+            {
+                if(space.creature != null)
+                {
+                    if (space.creature.Actions > 0 && space.creature.CurrHP > 0)
+                        a++;
+                }
+            }
+            return a;
         }
 
         private void chooseParty()
@@ -140,12 +155,85 @@ namespace BattleTest1
                 if(space.creature != null)
                 {
                     if (space.creature.CurrHP > 0)
+                    {
                         space.creature.Actions = 1;
+                    }
                 }
             }
 
-            drawMap();
-            
+            while(teamActionsLeft(HeroSide) > 0)
+            {
+                //Draw map and menu.
+                drawMap();
+                Creature hero = null;
+                for(int i = 0; i < HeroSide.Length; i++)
+                {
+                    if(HeroSide[i].creature != null)
+                    {
+                        hero = HeroSide[i].creature;
+                        Console.Write("\t" + i + ". " + hero.Name);
+                    }
+                }
+                for (int i = 0; i < HeroSide.Length; i++)
+                {
+                    if (HeroSide[i].creature != null)
+                    {
+                        hero = HeroSide[i].creature;
+                        Console.Write("\tHP: " + hero.CurrHP + "/" + hero.MaxHP);
+                    }
+                }
+                for (int i = 0; i < HeroSide.Length; i++)
+                {
+                    if (HeroSide[i].creature != null)
+                    {
+                        hero = HeroSide[i].creature;
+                        Console.Write("\tAP: " + hero.CurrAP + "/" + hero.MaxAP);
+                    }
+                }
+                for (int i = 0; i < HeroSide.Length; i++)
+                {
+                    if (HeroSide[i].creature != null)
+                    {
+                        hero = HeroSide[i].creature;
+                        Console.Write("\tActions: " + hero.Actions);
+                    }
+                }
+
+                int key = Console.Read();
+                if(key == '1')
+                {
+                    if (HeroSide[0].creature == null)
+                        continue;
+                    else
+                        displayAbilities(HeroSide[0].creature);
+                }
+            }
+        }
+
+        public Ability displayAbilities(Creature hero)
+        {
+            Ability choice = null;
+            while (choice == null)
+            {
+                drawMap();
+                Console.WriteLine(hero.Name + " (" + hero.CurrAP + ")");
+                for (int i = 0; i < hero.Abilities.Count; i++)
+                {
+                    Ability option = hero.Abilities[i];
+                    Console.WriteLine((i+1) + ". " + option.Title + "(" + option.AP_Cost + " AP): " + option.Description);
+                }
+
+                string line = Console.ReadLine();
+                int x = -1;
+                if (Int32.TryParse(line, out x))
+                {
+                    if(x > 0 && x <= hero.Abilities.Count)
+                    {
+                        choice = hero.Abilities[x - 1];
+                    }
+                }
+            }
+            return choice;
         }
 
         public void EnemyTurn()
