@@ -28,7 +28,7 @@ namespace BattleTest1
                 BottomMod = 0;
                 Actions = 1;
                 Abilities = new List<Ability>();
-                //Abilities.Add(new Wrench_Throw());
+                Abilities.Add(new Wrench_Throw());
             }
         }
     }

@@ -21,5 +21,6 @@ namespace BattleTest1
             front = false;
             bottom = false;
         }
+        
     }
 }

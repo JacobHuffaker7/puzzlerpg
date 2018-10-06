@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace BattleTest1
 {
-    class Reading_Rainbow : Ability
+    class Bass_Bash : Ability
     {
-        public Reading_Rainbow()
+        public Bass_Bash()
         {
-            Title = "Reading Rainbow";
-            Description = "An energy blast taught to Rachel by Master Lavar Burton.";
+            Title = "Bass Bash";
+            Description = "Steve whacks someone over the head with his bass guitar.";
             AP_Cost = 0;
             TargetType = "Enemy";
             //Targets will be set later by a setter that's called externally;
             Targets = new List<Space>();
             BasePower = 5;
-            top = false;
-            front = true;
+            top = true;
+            front = false;
             bottom = false;
         }
         

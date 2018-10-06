@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Ability.cs" />
     <Compile Include="Ash.cs" />
+    <Compile Include="Bass_Bash.cs" />
     <Compile Include="Creature.cs" />
     <Compile Include="Holmes.cs" />
     <Compile Include="Nick.cs" />

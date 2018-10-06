@@ -28,7 +28,7 @@ namespace BattleTest1
                 BottomMod = 1;
                 Actions = 1;
                 Abilities = new List<Ability>();
-                //Abilities.Add(new Pinka_Cola());
+                Abilities.Add(new Pinka_Cola());
             }
         }
     }

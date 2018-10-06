@@ -14,7 +14,7 @@ namespace BattleTest1
             {//Need description and stats
                 Name = "Steve";
                 Alignment = "Hero";
-                Description = "A bassist who quietly supports his team with music.";
+                Description = "An underappreciated bassist who supports his team with music.";
                 MaxHP = 30;
                 CurrHP = 30;
                 MaxAP = 10;

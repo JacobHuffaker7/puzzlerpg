@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace BattleTest1
 {
-    class Reading_Rainbow : Ability
+    class Wrench_Throw : Ability
     {
-        public Reading_Rainbow()
+        public Wrench_Throw()
         {
-            Title = "Reading Rainbow";
-            Description = "An energy blast taught to Rachel by Master Lavar Burton.";
+            Title = "Wrench Throw";
+            Description = "Holmes throws a wrench at an enemy.";
             AP_Cost = 0;
             TargetType = "Enemy";
             //Targets will be set later by a setter that's called externally;
@@ -21,6 +21,5 @@ namespace BattleTest1
             front = true;
             bottom = false;
         }
-        
     }
 }
