@@ -10,6 +10,8 @@ namespace BattleTest1
     {
         static void Main(string[] args)
         {
+            Console.WriteLine("Choose a battle.");
+            
         }
     }
 }
