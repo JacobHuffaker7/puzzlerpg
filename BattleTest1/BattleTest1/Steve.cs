@@ -17,8 +17,8 @@ namespace BattleTest1
                 Description = "An underappreciated bassist who supports his team with music.";
                 MaxHP = 30;
                 CurrHP = 30;
-                MaxAP = 10;
-                CurrAP = 10;
+                MaxAP = 20;
+                CurrAP = 20;
                 BaseAttack = 8;
                 CurrAttack = 8;
                 BaseDefense = 8;
@@ -30,6 +30,9 @@ namespace BattleTest1
                 Abilities = new List<Ability>();
                 Abilities.Add(new Bass_Bash());
                 Abilities.Add(new Sick_Riff());
+                Abilities.Add(new Emo_Teen_Anthem());
+                Abilities.Add(new Song_Of_Comfort());
+                Abilities.Add(new Heavy_Metal());
             }
         }
     }

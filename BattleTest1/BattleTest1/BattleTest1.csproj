@@ -50,6 +50,8 @@
     <Compile Include="Battle1.cs" />
     <Compile Include="Bicycle_Kick.cs" />
     <Compile Include="Creature.cs" />
+    <Compile Include="Emo_Teen_Anthem.cs" />
+    <Compile Include="Heavy_Metal.cs" />
     <Compile Include="Holmes.cs" />
     <Compile Include="Nick.cs" />
     <Compile Include="Overhead_Slash.cs" />
@@ -59,6 +61,7 @@
     <Compile Include="Rachel.cs" />
     <Compile Include="Reading_Rainbow.cs" />
     <Compile Include="Sick_Riff.cs" />
+    <Compile Include="Song_Of_Comfort.cs" />
     <Compile Include="Space.cs" />
     <Compile Include="Sterling.cs" />
     <Compile Include="Steve.cs" />

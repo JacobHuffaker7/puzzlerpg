@@ -13,7 +13,7 @@ namespace BattleTest1
             Title = "Bicycle Kick";
             Description = "You know Fox's Up-Smash? That.";
             AP_Cost = 0;
-            TargetType = "Hero";
+            TargetType = "Enemy";
             //Targets will be set later by a setter that's called externally;
             Targets = new List<Space>();
             BasePower = 6;
