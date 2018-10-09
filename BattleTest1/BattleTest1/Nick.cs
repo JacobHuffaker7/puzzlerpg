@@ -29,6 +29,8 @@ namespace BattleTest1
                 Actions = 1;
                 Abilities = new List<Ability>();
                 Abilities.Add(new Bicycle_Kick());
+                Abilities.Add(new Haymaker());
+                Abilities.Add(new Billable_Hours());
             }
         }
     }

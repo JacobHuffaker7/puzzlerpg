@@ -6,17 +6,17 @@ using System.Threading.Tasks;
 
 namespace BattleTest1
 {
-    class Bass_Bash : Ability
+    class For_Whom_The_Bell_Tolls : Ability
     {
-        public Bass_Bash()
+        public For_Whom_The_Bell_Tolls()
         {
-            Title = "Bass Bash";
-            Description = "Steve whacks someone over the head with his bass guitar.";
-            AP_Cost = 0;
+            Title = "For Whom the Bell Tolls";
+            Description = "Rachel uses ninlitsu to summon a bell to drop on an enemy.";
+            AP_Cost = 3;
             TargetType = "Enemy";
             //Targets will be set later by a setter that's called externally;
             Targets = new List<Space>();
-            BasePower = 5;
+            BasePower = 8;
             top = true;
             front = false;
             bottom = false;

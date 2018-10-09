@@ -164,6 +164,8 @@ namespace BattleTest1
                     lose = true;
                 else if (allDead(EnemySide))
                     win = true;
+                else
+                    Billable_Hours.elapsed++;
             }
             //do end battle stuff.
         }
@@ -340,6 +342,11 @@ namespace BattleTest1
                 {
                     if(x > 0 && x <= hero.Abilities.Count)
                     {
+                        if(hero.Abilities[x-1].AP_Cost > hero.CurrAP)
+                        {
+                            Console.WriteLine("\n" + hero.Name + " doesn't have enough AP.");
+                            continue;
+                        }
                         choice = hero.Abilities[x - 1];
                     }
                 }

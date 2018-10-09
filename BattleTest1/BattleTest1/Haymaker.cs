@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace BattleTest1
 {
-    class Bass_Bash : Ability
+    class Haymaker : Ability
     {
-        public Bass_Bash()
+        public Haymaker()
         {
-            Title = "Bass Bash";
-            Description = "Steve whacks someone over the head with his bass guitar.";
-            AP_Cost = 0;
+            Title = "Haymaker";
+            Description = "Nick slugs an enemy with all his might.";
+            AP_Cost = 3;
             TargetType = "Enemy";
             //Targets will be set later by a setter that's called externally;
             Targets = new List<Space>();
-            BasePower = 5;
-            top = true;
-            front = false;
+            BasePower = 10;
+            top = false;
+            front = true;
             bottom = false;
         }
     }

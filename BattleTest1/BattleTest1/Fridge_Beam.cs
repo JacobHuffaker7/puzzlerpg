@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace BattleTest1
 {
-    class Bass_Bash : Ability
+    class Fridge_Beam : Ability
     {
-        public Bass_Bash()
+        public Fridge_Beam()
         {
-            Title = "Bass Bash";
-            Description = "Steve whacks someone over the head with his bass guitar.";
+            Title = "Fridge Beam";
+            Description = "A weak beam of frost from the mini-fridge.";
             AP_Cost = 0;
             TargetType = "Enemy";
             //Targets will be set later by a setter that's called externally;
             Targets = new List<Space>();
             BasePower = 5;
-            top = true;
-            front = false;
+            top = false;
+            front = true;
             bottom = false;
         }
     }
