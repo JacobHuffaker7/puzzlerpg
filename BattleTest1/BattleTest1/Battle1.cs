@@ -11,13 +11,18 @@ namespace BattleTest1
         public Battle1()
         {
             Rounds = 0;
-            battleOver = false;
             HeroSide = new Space[3];
             EnemySide = new Space[3];
 
-            //EnemySide[0] = new Bear();
-            //EnemySide[1] = new Turtle();
-            //EnemySide[2] = new Skeleton();
+            for(int i = 0; i < 3; i++)
+            {
+                HeroSide[i] = new Space();
+                EnemySide[i] = new Space();
+            }
+
+            EnemySide[0].creature = new Holmes(1);
+            EnemySide[1].creature = new Ash(1);
+            EnemySide[2].creature = new Rachel(1);
         }
     }
 }

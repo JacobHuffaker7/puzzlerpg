@@ -23,16 +23,16 @@ namespace BattleTest1
         {
             Console.Clear();
             Console.WriteLine();
-            Console.Write("Enemies: |");
+            Console.Write("Enemies: ||");
             for (int i = 0; i < EnemySide.Length; i++)
             {
-                Console.Write(EnemySide[i].creature.Name + " (" + EnemySide[i].creature.CurrHP + "/" + EnemySide[i].creature.MaxHP + ")|");
+                Console.Write(" " + EnemySide[i].creature.Name + " (" + EnemySide[i].creature.CurrHP + "/" + EnemySide[i].creature.MaxHP + ") ||");
             }
             Console.WriteLine();
-            Console.Write("Heroes: |");
+            Console.Write("Heroes: ||");
             for (int i = 0; i < EnemySide.Length; i++)
             {
-                Console.Write(HeroSide[i].creature.Name + " (" + HeroSide[i].creature.CurrHP + "/" + HeroSide[i].creature.MaxHP + ")|");
+                Console.Write(" " + HeroSide[i].creature.Name + " (" + HeroSide[i].creature.CurrHP + "/" + HeroSide[i].creature.MaxHP + ") ||");
             }
             Console.WriteLine();
         }
@@ -63,13 +63,13 @@ namespace BattleTest1
             {
                 Console.Clear();
                 Console.WriteLine();
-                Console.Write("Enemies: |");
+                Console.Write("Enemies: ||");
                 for(int i = 0; i < EnemySide.Length; i++)
                 {
-                    Console.Write(EnemySide[i].creature.Name + " (" + EnemySide[i].creature.CurrHP + "/" + EnemySide[i].creature.MaxHP + ")|");
+                    Console.Write(" " + EnemySide[i].creature.Name + " (" + EnemySide[i].creature.CurrHP + "/" + EnemySide[i].creature.MaxHP + ") ||");
                 }
                 Console.WriteLine();
-                Console.WriteLine("Heroes:  |" + HeroNames[0] + "|" + HeroNames[1] + "|" + HeroNames[2] + "|");
+                Console.WriteLine("Heroes:  || " + HeroNames[0] + " || " + HeroNames[1] + " || " + HeroNames[2] + " || ");
                 int key;
                 while (HeroIndex == 3)
                 {
@@ -77,6 +77,7 @@ namespace BattleTest1
                     key = Console.Read();
                     if (key == 'y')
                     {
+                        teamReady = true;
                         break;                       
                     }
                     else if (key == 'n')
@@ -190,9 +191,10 @@ namespace BattleTest1
                     if(HeroSide[i].creature != null)
                     {
                         hero = HeroSide[i].creature;
-                        Console.Write("\t" + i + ". " + hero.Name);
+                        Console.Write("\t" + (i+1) + ". " + hero.Name);
                     }
                 }
+                Console.Write("\n");
                 for (int i = 0; i < HeroSide.Length; i++)
                 {
                     if (HeroSide[i].creature != null)
@@ -201,6 +203,7 @@ namespace BattleTest1
                         Console.Write("\tHP: " + hero.CurrHP + "/" + hero.MaxHP);
                     }
                 }
+                Console.Write("\n");
                 for (int i = 0; i < HeroSide.Length; i++)
                 {
                     if (HeroSide[i].creature != null)
@@ -209,6 +212,7 @@ namespace BattleTest1
                         Console.Write("\tAP: " + hero.CurrAP + "/" + hero.MaxAP);
                     }
                 }
+                Console.Write("\n");
                 for (int i = 0; i < HeroSide.Length; i++)
                 {
                     if (HeroSide[i].creature != null)
@@ -217,6 +221,7 @@ namespace BattleTest1
                         Console.Write("\tActions: " + hero.Actions);
                     }
                 }
+                Console.Write("\n");
 
                 Ability choice = null;
                 Creature attacker = null;
@@ -276,6 +281,7 @@ namespace BattleTest1
 
                 choice.execute(attacker);
                 attacker.Actions--;
+                attacker.CurrAP -= choice.AP_Cost;
             }
         }
 
@@ -295,6 +301,7 @@ namespace BattleTest1
                     }
                 }
 
+                Console.Write("\n");
                 string line = Console.ReadLine();
                 int x = -1;
                 if (Int32.TryParse(line, out x))
@@ -306,6 +313,7 @@ namespace BattleTest1
                             if (choice.canDo(attacker, grid[x - 1].creature))
                             {
                                 choice.setTargets(grid, x - 1);
+                                selected = grid[x-1];
                             }
                         }
                     }
@@ -319,7 +327,7 @@ namespace BattleTest1
             while (choice == null)
             {
                 drawMap();
-                Console.WriteLine(hero.Name + " (" + hero.CurrAP + ")");
+                Console.WriteLine(hero.Name + " (" + hero.CurrAP + "/" + hero.MaxAP + " AP)");
                 for (int i = 0; i < hero.Abilities.Count; i++)
                 {
                     Ability option = hero.Abilities[i];

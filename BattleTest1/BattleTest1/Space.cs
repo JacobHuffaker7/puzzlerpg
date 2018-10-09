@@ -9,5 +9,10 @@ namespace BattleTest1
     class Space
     {
         public Creature creature;
+
+        public Space()
+        {
+            creature = null;
+        }
     }
 }
