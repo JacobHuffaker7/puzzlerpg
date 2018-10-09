@@ -245,9 +245,9 @@ namespace BattleTest1
                 {
                     if (HeroSide[1].creature == null)
                         continue;
-                    else if (HeroSide[0].creature.Actions == 0)
+                    else if (HeroSide[1].creature.Actions == 0)
                     {
-                        Console.WriteLine("No actions left for " + HeroSide[0].creature.Name + ".");
+                        Console.WriteLine("No actions left for " + HeroSide[1].creature.Name + ".");
                         continue;
                     }
                     else
@@ -260,9 +260,9 @@ namespace BattleTest1
                 {
                     if (HeroSide[2].creature == null)
                         continue;
-                    else if (HeroSide[0].creature.Actions == 0)
+                    else if (HeroSide[2].creature.Actions == 0)
                     {
-                        Console.WriteLine("No actions left for " + HeroSide[0].creature.Name + ".");
+                        Console.WriteLine("No actions left for " + HeroSide[2].creature.Name + ".");
                         continue;
                     }
                     else
