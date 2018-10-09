@@ -9,7 +9,8 @@ namespace BattleTest1
     class Battle
     {
         public int Rounds;
-        public bool battleOver;
+        public bool win = false;
+        public bool lose = false;
         public Space[] HeroSide;
         public Space[] EnemySide;
 
@@ -136,14 +137,32 @@ namespace BattleTest1
             startBattle();
         }
 
+        public bool allDead(Space[] grid)
+        {
+            bool done = true;
+            foreach(Space space in grid)
+            {
+                if(space.creature != null)
+                {
+                    if (space.creature.CurrHP > 0)
+                        done = false;
+                }
+            }
+            return done;
+        }
+
         public void startBattle()
         {
             //do Opening animations or whatever
-            while (!battleOver)
+            while (!win && !lose)
             {
                 PlayerTurn();
                 EnemyTurn();
                 StatusTurn();
+                if (allDead(HeroSide))
+                    lose = true;
+                else if (allDead(EnemySide))
+                    win = true;
             }
             //do end battle stuff.
         }
@@ -199,13 +218,97 @@ namespace BattleTest1
                     }
                 }
 
+                Ability choice = null;
+                Creature attacker = null;
                 int key = Console.Read();
-                if(key == '1')
+                if (key == '1')
                 {
                     if (HeroSide[0].creature == null)
                         continue;
+                    else if (HeroSide[0].creature.Actions == 0)
+                    {
+                        Console.WriteLine("No actions left for " + HeroSide[0].creature.Name + ".");
+                        continue;
+                    }
                     else
-                        displayAbilities(HeroSide[0].creature);
+                    {
+                        choice = displayAbilities(HeroSide[0].creature);
+                        attacker = HeroSide[0].creature;
+                    }
+                }
+                else if (key == '2')
+                {
+                    if (HeroSide[1].creature == null)
+                        continue;
+                    else if (HeroSide[0].creature.Actions == 0)
+                    {
+                        Console.WriteLine("No actions left for " + HeroSide[0].creature.Name + ".");
+                        continue;
+                    }
+                    else
+                    {
+                        choice = displayAbilities(HeroSide[1].creature);
+                        attacker = HeroSide[1].creature;
+                    }
+                }
+                else if (key == '3')
+                {
+                    if (HeroSide[2].creature == null)
+                        continue;
+                    else if (HeroSide[0].creature.Actions == 0)
+                    {
+                        Console.WriteLine("No actions left for " + HeroSide[0].creature.Name + ".");
+                        continue;
+                    }
+                    else
+                    {
+                        choice = displayAbilities(HeroSide[2].creature);
+                        attacker = HeroSide[2].creature;
+                    }
+                }
+                else
+                    continue;
+
+                if (choice.TargetType == "Hero")
+                    pickTarget(attacker, choice, HeroSide);
+                else if (choice.TargetType == "Enemy")
+                    pickTarget(attacker, choice, EnemySide);
+
+                choice.execute(attacker);
+                attacker.Actions--;
+            }
+        }
+
+        public void pickTarget(Creature attacker, Ability choice, Space[] grid)
+        {
+            Space selected = null;
+            while (selected == null)
+            {
+                drawMap();
+                Console.WriteLine(attacker.Name + " will use " + choice.Title + " on...");
+                for (int i = 0; i < grid.Length; i++)
+                {
+                    if (grid[i].creature != null)
+                    {
+                        Creature target = grid[i].creature;
+                        Console.Write((i + 1) + "." + target.Name + " (" + target.CurrHP + "/" + target.MaxHP + ")\t");
+                    }
+                }
+
+                string line = Console.ReadLine();
+                int x = -1;
+                if (Int32.TryParse(line, out x))
+                {
+                    if (x > 0 && x <= grid.Length)
+                    {
+                        if (grid[x - 1].creature != null)
+                        {
+                            if (choice.canDo(attacker, grid[x - 1].creature))
+                            {
+                                choice.setTargets(grid, x - 1);
+                            }
+                        }
+                    }
                 }
             }
         }

@@ -27,13 +27,19 @@ namespace BattleTest1
         {
             foreach(Space space in Targets)
             {
-                if(space.creature != null)
+                if (space.creature != null)
                 {
                     Creature defender = space.creature;
-                    defender.CurrHP -= calculateDamage(attacker, defender);
-                    if(defender.CurrHP < 0)
-                    {
-                        defender.CurrHP = 0;
+                    if(defender.CurrHP > 0)
+                    { 
+                        int damage = calculateDamage(attacker, defender);
+                        defender.CurrHP -= damage;
+                        Console.WriteLine(attacker.Name + " uses " + Title + " on " + defender.Name + " for " + damage + " damage!");
+                        if (defender.CurrHP <= 0)
+                        {
+                            defender.CurrHP = 0;
+                            Console.WriteLine(defender.Name + " is out cold!");
+                        }
                     }
                 }
             }
@@ -56,6 +62,14 @@ namespace BattleTest1
                 damage = (int)(damage * defender.BottomMod);
 
             return damage;
+        }
+
+        public virtual bool canDo(Creature attacker, Creature defender)
+        {
+            if (defender.CurrHP == 0)
+                return false;
+            else
+                return true;
         }
     }
 }

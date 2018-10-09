@@ -11,7 +11,13 @@ namespace BattleTest1
         static void Main(string[] args)
         {
             Console.WriteLine("Choose a battle.");
-            
+            Console.WriteLine("Battle 1: Initial Test");
+            while (Console.Read() != '1')
+            {
+                Console.WriteLine("Choose a battle.");
+                Console.WriteLine("Battle 1: Initial Test");
+            }
+            new Battle1().runBattle();
         }
     }
 }
