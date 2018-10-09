@@ -360,41 +360,47 @@ namespace BattleTest1
             foreach(Space space in EnemySide)
             {
                 Creature enemy = space.creature;
-                Ability chosenAbility = null;
-                while (chosenAbility == null)
+                if (enemy != null)
                 {
-                    int r = random.Next(enemy.Abilities.Count);
-                    if (enemy.CurrAP >= enemy.Abilities[r].AP_Cost)
-                        chosenAbility = enemy.Abilities[r];
-                }
-
-                /*TODO: In the future, we'll want to check if the ability should
-                 * hit heroes or enemies, and make sure the target is valid (i.e.,
-                 * you shouldn't be able to heal or hurt anyone who has 0 HP.)
-                 * This would also let us add healing abilities for the enemies
-                 * to use. Maybe each ability could have a canDo() function to
-                 * check if the move is valid, given the attacker and targets.
-                 * For now, we'll assume all the enemies can do is attack heroes.
-                */
-                int index = -1;
-
-                while(index < 0)
-                {
-                    index = random.Next(HeroSide.Length);
+                    if (enemy.CurrHP > 0)
                     {
-                        if (HeroSide[index].creature != null)
+                        Ability chosenAbility = null;
+                        while (chosenAbility == null)
                         {
-                            if (HeroSide[index].creature.CurrHP > 0)
-                            {
-                                chosenAbility.setTargets(HeroSide, index);
-                            }
-                            else index = -1;
+                            int r = random.Next(enemy.Abilities.Count);
+                            if (enemy.CurrAP >= enemy.Abilities[r].AP_Cost)
+                                chosenAbility = enemy.Abilities[r];
                         }
-                        else index = -1;
+
+                        /*TODO: In the future, we'll want to check if the ability should
+                         * hit heroes or enemies, and make sure the target is valid (i.e.,
+                         * you shouldn't be able to heal or hurt anyone who has 0 HP.)
+                         * This would also let us add healing abilities for the enemies
+                         * to use. Maybe each ability could have a canDo() function to
+                         * check if the move is valid, given the attacker and targets.
+                         * For now, we'll assume all the enemies can do is attack heroes.
+                        */
+                        int index = -1;
+
+                        while (index < 0)
+                        {
+                            index = random.Next(HeroSide.Length);
+                            {
+                                if (HeroSide[index].creature != null)
+                                {
+                                    if (HeroSide[index].creature.CurrHP > 0)
+                                    {
+                                        chosenAbility.setTargets(HeroSide, index);
+                                    }
+                                    else index = -1;
+                                }
+                                else index = -1;
+                            }
+                        }
+
+                        chosenAbility.execute(enemy);
                     }
                 }
-
-                chosenAbility.execute(enemy);
             }
         }
 

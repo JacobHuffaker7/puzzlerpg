@@ -49,8 +49,12 @@
     <Compile Include="Battle.cs" />
     <Compile Include="Battle1.cs" />
     <Compile Include="Bicycle_Kick.cs" />
+    <Compile Include="Billable_Hours.cs" />
     <Compile Include="Creature.cs" />
     <Compile Include="Emo_Teen_Anthem.cs" />
+    <Compile Include="For_Whom_The_Bell_Tolls.cs" />
+    <Compile Include="Fridge_Beam.cs" />
+    <Compile Include="Haymaker.cs" />
     <Compile Include="Heavy_Metal.cs" />
     <Compile Include="Holmes.cs" />
     <Compile Include="Nick.cs" />
