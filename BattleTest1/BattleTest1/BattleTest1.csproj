@@ -44,10 +44,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ability.cs" />
+    <Compile Include="Piercing_Shot.cs" />
+    <Compile Include="Arrow_Shot.cs" />
+    <Compile Include="Skeleton.cs" />
+    <Compile Include="Turtle.cs" />
+    <Compile Include="Bear.cs" />
     <Compile Include="Ash.cs" />
     <Compile Include="Bass_Bash.cs" />
     <Compile Include="Battle.cs" />
     <Compile Include="Battle1.cs" />
+    <Compile Include="Bear_Rage.cs" />
+    <Compile Include="Bear_Slash.cs" />
     <Compile Include="Bicycle_Kick.cs" />
     <Compile Include="Billable_Hours.cs" />
     <Compile Include="Creature.cs" />
@@ -69,6 +76,8 @@
     <Compile Include="Space.cs" />
     <Compile Include="Sterling.cs" />
     <Compile Include="Steve.cs" />
+    <Compile Include="Misty_Heal.cs" />
+    <Compile Include="Water_Blast.cs" />
     <Compile Include="Wide_Swipe.cs" />
     <Compile Include="Wrench_Throw.cs" />
   </ItemGroup>
