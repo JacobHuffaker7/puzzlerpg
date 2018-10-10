@@ -29,12 +29,12 @@ namespace BattleTest1
                 Console.Write(" " + EnemySide[i].creature.Name + " (" + EnemySide[i].creature.CurrHP + "/" + EnemySide[i].creature.MaxHP + ") ||");
             }
             Console.WriteLine();
-            Console.Write("Heroes: ||");
+            Console.Write("Heroes:  ||");
             for (int i = 0; i < EnemySide.Length; i++)
             {
                 Console.Write(" " + HeroSide[i].creature.Name + " (" + HeroSide[i].creature.CurrHP + "/" + HeroSide[i].creature.MaxHP + ") ||");
             }
-            Console.WriteLine();
+            Console.Write("\n\n");
         }
 
         public int teamActionsLeft(Space[] side)
@@ -69,11 +69,11 @@ namespace BattleTest1
                     Console.Write(" " + EnemySide[i].creature.Name + " (" + EnemySide[i].creature.CurrHP + "/" + EnemySide[i].creature.MaxHP + ") ||");
                 }
                 Console.WriteLine();
-                Console.WriteLine("Heroes:  || " + HeroNames[0] + " || " + HeroNames[1] + " || " + HeroNames[2] + " || ");
+                Console.WriteLine("Heroes:  || " + HeroNames[0] + " || " + HeroNames[1] + " || " + HeroNames[2] + " || \n");
                 int key;
                 while (HeroIndex == 3)
                 {
-                    Console.WriteLine("Use this party? Y/N");
+                    Console.WriteLine("\nUse this party? Y/N");
                     key = Console.Read();
                     if (key == 'y')
                     {
@@ -158,7 +158,11 @@ namespace BattleTest1
             while (!win && !lose)
             {
                 PlayerTurn();
+                if (win || lose)
+                    break;
                 EnemyTurn();
+                if (win || lose)
+                    break;
                 StatusTurn();
                 if (allDead(HeroSide))
                     lose = true;
@@ -168,6 +172,15 @@ namespace BattleTest1
                     Billable_Hours.elapsed++;
             }
             //do end battle stuff.
+            if (win)
+            {
+                Console.Write("\n\nYou win!");
+            }
+            else if (lose)
+            {
+                Console.Write("\n\nYou lose.");
+            }
+            Console.ReadLine();
         }
 
         public void PlayerTurn()
@@ -185,6 +198,16 @@ namespace BattleTest1
 
             while(teamActionsLeft(HeroSide) > 0)
             {
+                if (allDead(HeroSide))
+                {
+                    lose = true;
+                    return;
+                }
+                else if (allDead(EnemySide))
+                {
+                    win = true;
+                    return;
+                }
                 //Draw map and menu.
                 drawMap();
                 Creature hero = null;
@@ -235,6 +258,13 @@ namespace BattleTest1
                     else if (HeroSide[0].creature.Actions == 0)
                     {
                         Console.WriteLine("No actions left for " + HeroSide[0].creature.Name + ".");
+                        Console.ReadLine();
+                        continue;
+                    }
+                    else if (HeroSide[0].creature.CurrHP == 0)
+                    {
+                        Console.WriteLine(HeroSide[0].creature.Name + "is out cold!");
+                        Console.ReadLine();
                         continue;
                     }
                     else
@@ -250,6 +280,13 @@ namespace BattleTest1
                     else if (HeroSide[1].creature.Actions == 0)
                     {
                         Console.WriteLine("No actions left for " + HeroSide[1].creature.Name + ".");
+                        Console.ReadLine();
+                        continue;
+                    }
+                    else if (HeroSide[1].creature.CurrHP == 0)
+                    {
+                        Console.WriteLine(HeroSide[1].creature.Name + "is out cold!");
+                        Console.ReadLine();
                         continue;
                     }
                     else
@@ -265,6 +302,13 @@ namespace BattleTest1
                     else if (HeroSide[2].creature.Actions == 0)
                     {
                         Console.WriteLine("No actions left for " + HeroSide[2].creature.Name + ".");
+                        Console.ReadLine();
+                        continue;
+                    }
+                    else if (HeroSide[2].creature.CurrHP == 0)
+                    {
+                        Console.WriteLine(HeroSide[2].creature.Name + "is out cold!");
+                        Console.ReadLine();
                         continue;
                     }
                     else
@@ -282,6 +326,7 @@ namespace BattleTest1
                     pickTarget(attacker, choice, EnemySide);
 
                 choice.execute(attacker);
+                choice.Targets.Clear();
                 attacker.Actions--;
                 attacker.CurrAP -= choice.AP_Cost;
             }
@@ -345,6 +390,7 @@ namespace BattleTest1
                         if(hero.Abilities[x-1].AP_Cost > hero.CurrAP)
                         {
                             Console.WriteLine("\n" + hero.Name + " doesn't have enough AP.");
+                            Console.ReadLine();
                             continue;
                         }
                         choice = hero.Abilities[x - 1];
@@ -359,6 +405,16 @@ namespace BattleTest1
             Random random = new Random();
             foreach(Space space in EnemySide)
             {
+                if (allDead(HeroSide))
+                {
+                    lose = true;
+                    return;
+                }
+                else if (allDead(EnemySide))
+                {
+                    win = true;
+                    return;
+                }
                 Creature enemy = space.creature;
                 if (enemy != null)
                 {

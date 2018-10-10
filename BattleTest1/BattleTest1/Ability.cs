@@ -40,6 +40,7 @@ namespace BattleTest1
                             defender.CurrHP = 0;
                             Console.WriteLine(defender.Name + " is out cold!");
                         }
+                        Console.ReadLine();
                     }
                 }
             }
@@ -53,7 +54,9 @@ namespace BattleTest1
 
         private int calculateDamage(Creature attacker, Creature defender)
         {
-            int damage = BasePower + attacker.CurrAttack;
+            int damage = (BasePower + attacker.CurrAttack) - defender.CurrDefense;
+            if (damage <= 0)
+                return 0;
             if (top)
                 damage = (int) (damage * defender.TopMod);
             if (front)
