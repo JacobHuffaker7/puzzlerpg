@@ -455,6 +455,7 @@ namespace BattleTest1
                         }
 
                         chosenAbility.execute(enemy);
+                        chosenAbility.Targets.Clear();
                     }
                 }
             }
