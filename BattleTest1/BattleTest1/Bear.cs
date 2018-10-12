@@ -18,7 +18,7 @@ namespace BattleTest1
                 MaxHP = 45;
                 CurrHP = 45;
                 MaxAP = 5;
-                CurrAP = 3;//This is intended to give a little time before using its Bear Rage
+                CurrAP = 5;//This is intended to give a little time before using its Bear Rage
                 BaseAttack = 10;
                 CurrAttack = 10;
                 BaseDefense = 10;
