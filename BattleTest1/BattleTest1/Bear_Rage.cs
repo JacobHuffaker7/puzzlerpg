@@ -31,10 +31,10 @@ namespace BattleTest1
                 {
                     recipient.CurrAttack += 2;
                     recipient.CurrDefense += 2;
-                    if (recipient.CurrAttack > recipient.BaseAttack + 4)
-                        recipient.CurrAttack = recipient.BaseAttack + 4;
-                    if (recipient.CurrDefense > recipient.BaseDefense + 4)
-                        recipient.CurrDefense = recipient.BaseDefense + 4;
+                    if (recipient.CurrAttack > recipient.BaseAttack + 2)
+                        recipient.CurrAttack = recipient.BaseAttack + 2;
+                    if (recipient.CurrDefense > recipient.BaseDefense + 2)
+                        recipient.CurrDefense = recipient.BaseDefense + 2;
                 }
             }
         }
