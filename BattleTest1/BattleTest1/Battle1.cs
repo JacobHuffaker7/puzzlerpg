@@ -20,9 +20,9 @@ namespace BattleTest1
                 EnemySide[i] = new Space();
             }
 
-            EnemySide[0].creature = new Holmes(1);
-            EnemySide[1].creature = new Ash(1);
-            EnemySide[2].creature = new Rachel(1);
+            EnemySide[0].creature = new Bear(1);
+            EnemySide[1].creature = new Turtle(1);
+            EnemySide[2].creature = new Skeleton(1);
         }
     }
 }

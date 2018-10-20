@@ -243,3 +243,4 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+BattleTest1/BattleTest1/BattleTest1.csproj

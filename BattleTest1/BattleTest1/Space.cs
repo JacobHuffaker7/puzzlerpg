@@ -9,10 +9,12 @@ namespace BattleTest1
     class Space
     {
         public Creature creature;
+        public List<Hazard> hazards;
 
         public Space()
         {
             creature = null;
+            hazards = new List<Hazard>();
         }
     }
 }
