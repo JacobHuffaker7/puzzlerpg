@@ -189,10 +189,7 @@ namespace BattleTest1
             {
                 if(space.creature != null)
                 {
-                    if (space.creature.CurrHP > 0)
-                    {
-                        space.creature.Actions = 1;
-                    }
+                    space.creature.Actions = 1;
                 }
             }
 
@@ -320,11 +317,22 @@ namespace BattleTest1
                 else
                     continue;
 
-                if (choice.TargetType == "Hero")
-                    pickTarget(attacker, choice, HeroSide);
-                else if (choice.TargetType == "Enemy")
-                    pickTarget(attacker, choice, EnemySide);
+                if(choice == null)
+                {
+                    attacker = null;
+                    continue;
+                }
 
+                if (choice.TargetType == "Hero")
+                {
+                    if (!pickTarget(attacker, choice, HeroSide))
+                        continue;
+                }
+                else if (choice.TargetType == "Enemy")
+                {
+                    if (!pickTarget(attacker, choice, EnemySide))
+                        continue;
+                }
                 choice.execute(attacker);
                 choice.Targets.Clear();
                 attacker.Actions--;
@@ -332,7 +340,8 @@ namespace BattleTest1
             }
         }
 
-        public void pickTarget(Creature attacker, Ability choice, Space[] grid)
+        //returns true if ability is executed and false if not.
+        public bool pickTarget(Creature attacker, Ability choice, Space[] grid)
         {
             Space selected = null;
             while (selected == null)
@@ -347,13 +356,16 @@ namespace BattleTest1
                         Console.Write((i + 1) + "." + target.Name + " (" + target.CurrHP + "/" + target.MaxHP + ")\t");
                     }
                 }
+                Console.Write((grid.Length+1) + ". Cancel");
 
                 Console.Write("\n");
                 string line = Console.ReadLine();
                 int x = -1;
                 if (Int32.TryParse(line, out x))
                 {
-                    if (x > 0 && x <= grid.Length)
+                    if (x == grid.Length + 1)
+                        return false;
+                    else if (x > 0 && x <= grid.Length)
                     {
                         if (grid[x - 1].creature != null)
                         {
@@ -366,6 +378,7 @@ namespace BattleTest1
                     }
                 }
             }
+            return true;
         }
 
         public Ability displayAbilities(Creature hero)
@@ -380,14 +393,17 @@ namespace BattleTest1
                     Ability option = hero.Abilities[i];
                     Console.WriteLine((i+1) + ". " + option.Title + "(" + option.AP_Cost + " AP): " + option.Description);
                 }
+                Console.Write((hero.Abilities.Count + 1) + ". Cancel\n");
 
                 string line = Console.ReadLine();
                 int x = -1;
                 if (Int32.TryParse(line, out x))
                 {
-                    if(x > 0 && x <= hero.Abilities.Count)
+                    if (x == hero.Abilities.Count + 1)
+                        return null;
+                    else if (x > 0 && x <= hero.Abilities.Count)
                     {
-                        if(hero.Abilities[x-1].AP_Cost > hero.CurrAP)
+                        if (hero.Abilities[x - 1].AP_Cost > hero.CurrAP)
                         {
                             Console.WriteLine("\n" + hero.Name + " doesn't have enough AP.");
                             Console.ReadLine();

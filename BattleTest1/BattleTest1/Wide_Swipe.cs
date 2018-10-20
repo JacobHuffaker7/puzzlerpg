@@ -12,7 +12,7 @@ namespace BattleTest1
         {
             Title = "Wide Swipe";
             Description = "A wide slash that hits enemies next to the target.";
-            AP_Cost = 0;
+            AP_Cost = 3;
             TargetType = "Enemy";
             //Targets will be set later by a setter that's called externally;
             Targets = new List<Space>();

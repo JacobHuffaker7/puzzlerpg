@@ -33,6 +33,7 @@ namespace BattleTest1
                 Abilities.Add(new Emo_Teen_Anthem());
                 Abilities.Add(new Song_Of_Comfort());
                 Abilities.Add(new Heavy_Metal());
+                Abilities.Add(new Mahler_sSecondSymphony());
             }
         }
     }
