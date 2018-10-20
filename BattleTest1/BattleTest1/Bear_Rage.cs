@@ -22,12 +22,26 @@ namespace BattleTest1
             bottom = false;
         }
 
+        public override void setTargets(Space[] grid, int index)
+        {
+            int bearIndex = 0;
+            foreach (Space space in grid)
+            {
+                if (space.creature.Name == "Bear")
+                {
+                    break;
+                }
+                bearIndex++;
+            }
+            Targets.Add(grid[bearIndex]);
+        }
+
         public override void execute(Creature attacker)
         {
             foreach (Space space in Targets)//This should only affect the using creature, no one else
             {
                 Creature recipient = space.creature;
-                if (recipient != null)
+                if (recipient.Name == "Bear")
                 {
                     recipient.CurrAttack += 2;
                     recipient.CurrDefense += 2;

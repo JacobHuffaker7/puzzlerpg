@@ -16,7 +16,7 @@ namespace BattleTest1
             TargetType = "Enemy";
             //Targets will be set later by a setter that's called externally;
             Targets = new List<Space>();
-            BasePower = 5;
+            BasePower = 1;
             top = false;
             front = true;
             bottom = false;

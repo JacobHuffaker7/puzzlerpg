@@ -12,7 +12,7 @@ namespace BattleTest1
         {
             Title = "Haymaker";
             Description = "Nick slugs an enemy with all his might.";
-            AP_Cost = 3;
+            AP_Cost = 4;
             TargetType = "Enemy";
             //Targets will be set later by a setter that's called externally;
             Targets = new List<Space>();

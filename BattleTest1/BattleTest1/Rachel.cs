@@ -29,6 +29,7 @@ namespace BattleTest1
                 Actions = 1;
                 Abilities = new List<Ability>();
                 Abilities.Add(new Reading_Rainbow());
+                Abilities.Add(new For_Whom_The_Bell_Tolls());
             }
         }
     }
