@@ -22,18 +22,13 @@ namespace BattleTest1
             bottom = false;
         }
 
-        public override void setTargets(Space[] grid, int index)
+        public override bool canDo(Creature attacker, Creature defender)
         {
-            int bearIndex = 0;
-            foreach (Space space in grid)
+            if (attacker == defender)
             {
-                if (space.creature.Name == "Bear")
-                {
-                    break;
-                }
-                bearIndex++;
+                return true;
             }
-            Targets.Add(grid[bearIndex]);
+            return false;
         }
 
         public override void execute(Creature attacker)
