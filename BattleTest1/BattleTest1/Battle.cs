@@ -19,7 +19,7 @@ namespace BattleTest1
             chooseParty();
         }
 
-        public void drawMap()
+        private void drawMap()
         {
             Console.Clear();
             Console.WriteLine();
@@ -37,7 +37,7 @@ namespace BattleTest1
             Console.Write("\n\n");
         }
 
-        public int teamActionsLeft(Space[] side)
+        private int teamActionsLeft(Space[] side)
         {
             int a = 0;
             foreach(Space space in side)
@@ -152,7 +152,7 @@ namespace BattleTest1
             return done;
         }
 
-        public void startBattle()
+        private void startBattle()
         {
             //do Opening animations or whatever
             while (!win && !lose)
@@ -183,7 +183,7 @@ namespace BattleTest1
             Console.ReadLine();
         }
 
-        public void PlayerTurn()
+        private void PlayerTurn()
         {
             foreach(Space space in HeroSide)
             {
@@ -341,7 +341,7 @@ namespace BattleTest1
         }
 
         //returns true if ability is executed and false if not.
-        public bool pickTarget(Creature attacker, Ability choice, Space[] grid)
+        private bool pickTarget(Creature attacker, Ability choice, Space[] grid)
         {
             Space selected = null;
             while (selected == null)
@@ -381,7 +381,7 @@ namespace BattleTest1
             return true;
         }
 
-        public Ability displayAbilities(Creature hero)
+        private Ability displayAbilities(Creature hero)
         {
             Ability choice = null;
             while (choice == null)

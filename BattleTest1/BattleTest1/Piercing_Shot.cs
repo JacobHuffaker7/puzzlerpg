@@ -11,7 +11,7 @@ namespace BattleTest1
         public Piercing_Shot()
         {
             Title = "Piercing Shot";
-            Description = "Skeleton shoots an arrow that pierces an enemies defence.";
+            Description = "Skeleton shoots an arrow that pierces an enemies defense.";
             AP_Cost = 2;
             TargetType = "Hero";
             //Targets will be set later by a setter that's called externally;

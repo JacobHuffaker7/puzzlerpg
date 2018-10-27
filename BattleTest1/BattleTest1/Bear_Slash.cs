@@ -11,7 +11,7 @@ namespace BattleTest1
         public Bear_Slash()
         {
             Title = "Bear Slash";
-            Description = "Bear attacks with powerfull claws.";
+            Description = "Bear attacks with powerful claws.";
             AP_Cost = 0;
             TargetType = "Hero";
             //Targets will be set later by a setter that's called externally;
