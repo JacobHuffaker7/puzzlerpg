@@ -40,6 +40,7 @@ namespace BattleTest1
                 {
                     recipient.CurrAttack += 2;
                     recipient.CurrDefense += 2;
+                    Console.WriteLine(attacker.Name + " uses " + Title + "!  It's more aggressive and resiliant!");
                     if (recipient.CurrAttack > recipient.BaseAttack + 2)
                         recipient.CurrAttack = recipient.BaseAttack + 2;
                     if (recipient.CurrDefense > recipient.BaseDefense + 2)
