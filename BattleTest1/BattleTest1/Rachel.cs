@@ -10,11 +10,12 @@ namespace BattleTest1
     {
         public Rachel(int level) : base(level)
         {
+            Name = "Rachel";
+            Alignment = "Hero";
+            Description = "A hardworking editor who fights with the power of literature.";
+
             if (level == 1)
-            {//Need description and stats
-                Name = "Rachel";
-                Alignment = "Hero";
-                Description = "A hardworking editor who fights with the power of literature.";
+            {
                 MaxHP = 35;
                 CurrHP = 35;
                 MaxAP = 10;

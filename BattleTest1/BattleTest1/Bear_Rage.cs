@@ -11,7 +11,7 @@ namespace BattleTest1
         public Bear_Rage()
         {
             Title = "Bear Rage";
-            Description = "Enraged through battle, it increases its attack and defence.";
+            Description = "Enraged through battle, it increases its attack and defense.";
             AP_Cost = 5;
             TargetType = "Self";
             //Targets will be set later by a setter that's called externally;

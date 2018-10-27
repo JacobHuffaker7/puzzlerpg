@@ -10,11 +10,12 @@ namespace BattleTest1
     {
         public Steve(int level) : base(level)
         {
+            Name = "Steve";
+            Alignment = "Hero";
+            Description = "An underappreciated bassist who supports his team with music.";
+
             if (level == 1)
-            {//Need description and stats
-                Name = "Steve";
-                Alignment = "Hero";
-                Description = "An underappreciated bassist who supports his team with music.";
+            {
                 MaxHP = 30;
                 CurrHP = 30;
                 MaxAP = 20;

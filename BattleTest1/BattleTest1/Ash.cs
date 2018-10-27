@@ -10,11 +10,12 @@ namespace BattleTest1
     {
         public Ash(int level) : base(level)
         {
-            if(level == 1)
+            Name = "Ash";
+            Alignment = "Hero";
+            Description = "A young spark plug of a writer with a zeal for life. Fast, frail, wields a katana.";
+
+            if (level == 1)
             {
-                Name = "Ash";
-                Alignment = "Hero";
-                Description = "A young spark plug of a writer with a zeal for life. Fast, frail, wields a katana.";
                 MaxHP = 30;
                 CurrHP = 30;
                 MaxAP = 10;

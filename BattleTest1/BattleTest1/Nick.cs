@@ -10,8 +10,12 @@ namespace BattleTest1
     {
         public Nick(int level) : base(level)
         {
+            Name = "Nick";
+            Alignment = "Hero";
+            Description = "A conniving lawyer with a penchant for fighting dirty.";
+
             if (level == 1)
-            {//Need description and stats
+            {
                 Name = "Nick";
                 Alignment = "Hero";
                 Description = "A conniving lawyer with a penchant for fighting dirty.";
