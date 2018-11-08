@@ -17,8 +17,8 @@ namespace BattleTest1
                 Description = "Good defences, especially on the top, and a decent area attack.  Also can heal allies. Weak to ground-based attacks.";
                 MaxHP = 35;
                 CurrHP = 35;
-                MaxAP = 10;
-                CurrAP = 10;
+                MaxAP = 5;
+                CurrAP = 5;
                 BaseAttack = 8;
                 CurrAttack = 8;
                 BaseDefense = 9;

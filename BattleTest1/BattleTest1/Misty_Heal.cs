@@ -22,23 +22,8 @@ namespace BattleTest1
             bottom = false;
         }
 
-        public override void setTargets(Space[] grid, int index)
-        {
-            foreach (Space space in grid)
-            {
-                if (space.creature != null && space.creature.Alignment == "Enemy")
-                {
-                    if (space.creature.CurrHP > 0)
-                    {
-                        Targets.Add(space);
-                    }
-                }
-            }
-        }
-
         public override void execute(Creature attacker)
         {
-            Console.WriteLine(attacker.Name + " uses " + Title + " on allies!  All enemies but " + attacker.Name + " heal for 5 HP!\n");
             foreach (Space space in Targets)
             {
                 Creature recipient = space.creature;

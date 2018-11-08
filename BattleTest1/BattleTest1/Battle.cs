@@ -454,15 +454,20 @@ namespace BattleTest1
                         */
                         int index = -1;
 
+                        Space[] side = new Space[3];
+                        if (chosenAbility.TargetType == "Hero")
+                            HeroSide.CopyTo(side, 0);
+                        else if (chosenAbility.TargetType == "Enemy")
+                            EnemySide.CopyTo(side, 0);
                         while (index < 0)
                         {
-                            index = random.Next(HeroSide.Length);
+                            index = random.Next(side.Length);
                             {
-                                if (HeroSide[index].creature != null)
+                                if (side[index].creature != null)
                                 {
-                                    if (HeroSide[index].creature.CurrHP > 0)
+                                    if (side[index].creature.CurrHP > 0)
                                     {
-                                        chosenAbility.setTargets(HeroSide, index);
+                                        chosenAbility.setTargets(side, index);
                                     }
                                     else index = -1;
                                 }

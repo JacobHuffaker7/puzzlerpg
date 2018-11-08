@@ -20,8 +20,8 @@ namespace BattleTest1
                 CurrHP = 45;
                 MaxAP = 10;
                 CurrAP = 10;
-                BaseAttack = 6;
-                CurrAttack = 6;
+                BaseAttack = 8;
+                CurrAttack = 8;
                 BaseDefense = 13;
                 CurrDefense = 13;
                 TopMod = 1;
