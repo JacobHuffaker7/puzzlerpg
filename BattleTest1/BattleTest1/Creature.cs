@@ -9,7 +9,7 @@ namespace BattleTest1
     class Creature
     {
         public string Name;
-        public string Alignment;
+        public string Alignment; //Which side the creature is on. Either "Hero" or "Enemy".
         public string Description;
         public int MaxHP;
         public int CurrHP;
@@ -19,12 +19,13 @@ namespace BattleTest1
         public int CurrAttack;
         public int BaseDefense;
         public int CurrDefense;
-        public double TopMod;
+        public double TopMod; //These three doubles modify damage received from the top, front, and bottom.
         public double FrontMod;
         public double BottomMod;
         public int Actions;
         public List<Ability> Abilities;
 
+        //This is the basic template of a Creature constructor. The derived classes will override it in every case.
         public Creature(int level)
         {
             //Name = name;

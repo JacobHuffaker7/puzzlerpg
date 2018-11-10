@@ -337,6 +337,8 @@ namespace BattleTest1
                 choice.Targets.Clear();
                 attacker.Actions--;
                 attacker.CurrAP -= choice.AP_Cost;
+                if (attacker.CurrAP < 0)
+                    attacker.CurrAP = 0;
             }
         }
 

@@ -14,7 +14,7 @@ namespace BattleTest1
             {
                 Name = "Turtle";
                 Alignment = "Enemy";
-                Description = "Good defences, especially on the top, and a decent area attack.  Also can heal allies. Weak to ground-based attacks.";
+                Description = "Good defenses, especially on the top, and a decent area attack. Also can heal allies. Weak to ground-based attacks.";
                 MaxHP = 35;
                 CurrHP = 35;
                 MaxAP = 5;
