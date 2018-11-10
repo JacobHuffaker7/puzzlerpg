@@ -38,6 +38,7 @@ namespace BattleTest1
                 }
             }
             elapsed = 0;
+            Console.WriteLine("Nick cashes in his billable hours! " + elapsed + " AP restored to all heroes!");
         }
 
         public override void setTargets(Space[] grid, int index)

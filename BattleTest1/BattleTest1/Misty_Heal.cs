@@ -34,6 +34,7 @@ namespace BattleTest1
                         recipient.CurrHP = recipient.MaxHP;
                 }
             }
+            Console.WriteLine(attacker.Name + " heals each teammate 5 HP.");
         }
     }
 }

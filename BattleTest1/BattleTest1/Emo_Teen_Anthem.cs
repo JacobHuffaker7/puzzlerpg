@@ -29,10 +29,16 @@ namespace BattleTest1
                 Creature recipient = space.creature;
                 if (recipient != null)
                 {
-                    recipient.CurrDefense *= 3;
-                    recipient.CurrDefense /= 2;
-                    if (recipient.CurrDefense > recipient.BaseDefense * 4)
+                    recipient.CurrDefense += recipient.BaseDefense / 2;
+                    if (recipient.CurrDefense >= recipient.BaseDefense * 4)
+                    {
                         recipient.CurrDefense = recipient.BaseDefense * 4;
+                        Console.WriteLine(attacker.Name + " uses " + Title + "! " + recipient.Name + "'s defense is maxed!");
+                        Console.ReadLine();
+                        continue;
+                    }
+                    Console.WriteLine(attacker.Name + " uses " + Title + "! " + recipient.Name + "'s defense rises!");
+                    Console.ReadLine();
                 }
             }
         }

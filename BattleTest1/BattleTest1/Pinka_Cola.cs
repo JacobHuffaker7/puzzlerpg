@@ -32,6 +32,8 @@ namespace BattleTest1
                     recipient.CurrHP += 10;
                     if (recipient.CurrHP > recipient.MaxHP)
                         recipient.CurrHP = recipient.MaxHP;
+                    Console.WriteLine(attacker.Name + " uses " + Title + " on " + recipient.Name + " to heal 10 HP!");
+                    Console.ReadLine();
                 }
             }
         }

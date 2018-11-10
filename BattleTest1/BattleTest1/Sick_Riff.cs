@@ -29,13 +29,19 @@ namespace BattleTest1
                 Creature recipient = space.creature;
                 if(recipient != null)
                 {
-                    recipient.CurrAttack *= 3;
-                    recipient.CurrAttack /= 2;
-                    if (recipient.CurrAttack > recipient.BaseAttack * 4)
+                    recipient.CurrAttack += recipient.BaseAttack / 2;
+                    if (recipient.CurrAttack >= recipient.BaseAttack * 4)
+                    {
                         recipient.CurrAttack = recipient.BaseAttack * 4;
+                        Console.WriteLine(attacker.Name + " uses " + Title + "! " + recipient.Name + "'s attack is maxed!");
+                        Console.ReadLine();
+                        continue;
+                    }
+                    Console.WriteLine(attacker.Name + " uses " + Title + "! " + recipient.Name + "'s attack rises!");
+                    Console.ReadLine();
                 }
             }
         }
-        
+
     }
 }

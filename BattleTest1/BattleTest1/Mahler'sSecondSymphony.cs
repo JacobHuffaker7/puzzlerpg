@@ -30,6 +30,8 @@ namespace BattleTest1
                 {
                     Creature recipient = space.creature;
                     recipient.CurrHP = recipient.MaxHP / 2;
+                    Console.WriteLine(attacker.Name + "uses " + Title + "! " + recipient.Name + "is revived with " + recipient.CurrHP + " HP!");
+                    Console.ReadLine();
                 }
             }
         }

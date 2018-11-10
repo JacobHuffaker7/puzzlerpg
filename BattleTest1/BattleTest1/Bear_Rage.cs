@@ -31,10 +31,13 @@ namespace BattleTest1
         {
             attacker.CurrAttack += 2;
             attacker.CurrDefense += 2;
+
+            Console.WriteLine("The bear rages! Its attack and defense increase!");
             if (attacker.CurrAttack > attacker.BaseAttack + 2)
                 attacker.CurrAttack = attacker.BaseAttack + 2;
             if (attacker.CurrDefense > attacker.BaseDefense + 2)
                 attacker.CurrDefense = attacker.BaseDefense + 2;
+            
         }
     }
 }

@@ -12,7 +12,7 @@ namespace BattleTest1
         {
             Title = "Song of Comfort";
             Description = "A soothing melody that heals each ally 3 HP.";
-            AP_Cost = 3;
+            AP_Cost = 2;
             TargetType = "Hero";
             //Targets will be set later by a setter that's called externally;
             Targets = new List<Space>();
@@ -32,6 +32,8 @@ namespace BattleTest1
                     recipient.CurrHP += 3;
                     if (recipient.CurrHP > recipient.MaxHP)
                         recipient.CurrHP = recipient.MaxHP;
+                    Console.WriteLine(attacker.Name + " heals " + recipient.Name + " 3 HP.");
+                    Console.ReadLine();
                 }
             }
         }
