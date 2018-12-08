@@ -157,6 +157,7 @@ namespace BattleTest1
             //do Opening animations or whatever
             while (!win && !lose)
             {
+                Rounds++;
                 PlayerTurn();
                 if (win || lose)
                     break;
