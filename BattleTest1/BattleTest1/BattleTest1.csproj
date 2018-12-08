@@ -44,7 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Ability.cs" />
+    <Compile Include="Cock_A_Doodle_Doom.cs" />
+    <Compile Include="FinalBattle.cs" />
     <Compile Include="Hazard.cs" />
+    <Compile Include="I_Vant_To_Cluck_Your_Blood.cs" />
     <Compile Include="Mahler%27sSecondSymphony.cs" />
     <Compile Include="Piercing_Shot.cs" />
     <Compile Include="Arrow_Shot.cs" />
@@ -79,6 +82,7 @@
     <Compile Include="Sterling.cs" />
     <Compile Include="Steve.cs" />
     <Compile Include="Misty_Heal.cs" />
+    <Compile Include="VampireChicken.cs" />
     <Compile Include="Water_Blast.cs" />
     <Compile Include="Wide_Swipe.cs" />
     <Compile Include="Wrench_Throw.cs" />
