@@ -30,7 +30,7 @@ namespace BattleTest1
             }
             Console.WriteLine();
             Console.Write("Heroes:  ||");
-            for (int i = 0; i < EnemySide.Length; i++)
+            for (int i = 0; i < HeroSide.Length; i++)
             {
                 Console.Write(" " + HeroSide[i].creature.Name + " (" + HeroSide[i].creature.CurrHP + "/" + HeroSide[i].creature.MaxHP + ") ||");
             }
@@ -215,6 +215,8 @@ namespace BattleTest1
                     {
                         hero = HeroSide[i].creature;
                         Console.Write("\t" + (i+1) + ". " + hero.Name);
+                        if (hero.Name.Length < 5)
+                            Console.Write('\t');
                     }
                 }
                 Console.Write("\n");
@@ -419,7 +421,7 @@ namespace BattleTest1
             return choice;
         }
 
-        public void EnemyTurn()
+        public virtual void EnemyTurn()
         {
             Random random = new Random();
             foreach(Space space in EnemySide)

@@ -33,17 +33,17 @@ namespace BattleTest1
                     {
                         int damage = calculateDamage(attacker, defender);
                         defender.CurrHP -= damage;
-                        Console.WriteLine(attacker.Name + " uses " + Title + " on " + defender.Name + " for " + damage + " damage!");
+                        Console.WriteLine('\n'+attacker.Name + " uses " + Title + " on " + defender.Name + " for " + damage + " damage!");
                         if (defender.CurrHP <= 0)
                         {
                             defender.CurrHP = 0;
                             Console.WriteLine(defender.Name + " is out cold!");
                         }
                         attacker.CurrHP += damage/2;
-                        if(attacker.CurrHP == attacker.MaxHP)
+                        Console.WriteLine('\n' + attacker.Name + " healed " + damage / 2 + " HP!");
+                        if (attacker.CurrHP > attacker.MaxHP)
                         {
                             attacker.CurrHP = attacker.MaxHP;
-                            Console.WriteLine(attacker.Name + " healed " + damage / 2 + "HP!");
                         }
                         Console.ReadLine();
                     }

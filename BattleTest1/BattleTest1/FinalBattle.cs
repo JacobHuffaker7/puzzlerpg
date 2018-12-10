@@ -23,7 +23,7 @@ namespace BattleTest1
             EnemySide[0].creature = new VampireChicken(1);
         }
 
-        public new void EnemyTurn()
+        public override void EnemyTurn()
         {
             Random random = new Random();
             Creature vamp = EnemySide[0].creature;
@@ -65,7 +65,7 @@ namespace BattleTest1
                     vamp.TopMod = 1;
                     vamp.FrontMod = 0;
                     vamp.BottomMod = 0;
-                    Console.WriteLine("Vampire Chicken pokes its head out of the top of the eggshell.");
+                    Console.WriteLine("\nVampire Chicken pokes its head out of the top of the eggshell.");
                     Console.ReadLine();
                 }
                 else if (open == 1)
@@ -73,15 +73,15 @@ namespace BattleTest1
                     vamp.TopMod = 0;
                     vamp.FrontMod = 1;
                     vamp.BottomMod = 0;
-                    Console.WriteLine("Vampire Chicken pokes its head out of a hole in the front of the shell.");
+                    Console.WriteLine("\nVampire Chicken pokes its head out of a hole in the front of the shell.");
                     Console.ReadLine();
                 }
-                else if (open == 1)
+                else if (open == 2)
                 {
                     vamp.TopMod = 0;
                     vamp.FrontMod = 0;
                     vamp.BottomMod = 1;
-                    Console.WriteLine("Vampire Chicken hangs upside down like a bat. His head touches the floor.");
+                    Console.WriteLine("\nVampire Chicken hangs upside down like a bat. His head touches the floor.");
                     Console.ReadLine();
                 }
 

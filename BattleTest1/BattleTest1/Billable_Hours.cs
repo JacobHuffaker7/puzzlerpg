@@ -37,8 +37,8 @@ namespace BattleTest1
                         recipient.CurrAP = recipient.MaxAP;
                 }
             }
-            elapsed = 0;
             Console.WriteLine("Nick cashes in his billable hours! " + elapsed + " AP restored to all heroes!");
+            elapsed = 0;
         }
 
         public override void setTargets(Space[] grid, int index)

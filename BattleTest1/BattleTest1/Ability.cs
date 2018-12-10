@@ -34,7 +34,7 @@ namespace BattleTest1
                     { 
                         int damage = calculateDamage(attacker, defender);
                         defender.CurrHP -= damage;
-                        Console.WriteLine(attacker.Name + " uses " + Title + " on " + defender.Name + " for " + damage + " damage!");
+                        Console.WriteLine('\n'+attacker.Name + " uses " + Title + " on " + defender.Name + " for " + damage + " damage!");
                         if (defender.CurrHP <= 0)
                         {
                             defender.CurrHP = 0;
